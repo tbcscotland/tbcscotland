@@ -14,10 +14,7 @@ class Profile(models.Model):
     activities = models.ImageField(upload_to='activities_images', blank=True)
     views = models.IntegerField(default=0)
     reviews = models.TextField()
-    # location
-    # password = models.CharField(max_length=20)
-    # email = models.CharField(max_length=128)
-    # username = models.CharField(max_length=128)
+    location = models.CharField(max_length=128, blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.username)
